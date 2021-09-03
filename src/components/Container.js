@@ -10,10 +10,12 @@ export default function Container() {
 
     function onClickHandle(e){
         const temp = searchBox.current.value
-        if(temp === ""){
-            setsearch("Harry")
-        }else{
+        
+        if(temp !== ""){
             setsearch(temp)
+        }
+        else{
+            setsearch("Harry")
         }
 
         searchBox.current.value = ""
@@ -22,6 +24,7 @@ export default function Container() {
 
     function onChangeHandle(e){
         setsetItem(returnSet(e.target.value))
+        
     }
     function returnSet(v){
         switch(v){
@@ -36,7 +39,8 @@ export default function Container() {
                 
             case "4":
                 return "set4"
-                
+            case "5":
+                return "set5"
             default:
                 return "set1"
         }
@@ -49,6 +53,14 @@ export default function Container() {
         }
     }
 
+    function randombgs(){
+        const ran = Math.floor(Math.random() * 2)
+        if(ran === 1){
+            return "bg1"
+        }else{
+            return "bg2"
+        }
+    }
     return (
         <div className="container">
             <h1 className="heading">Is this you?</h1>
@@ -59,11 +71,12 @@ export default function Container() {
                 <option value="2">Monsters</option>
                 <option value="3">Only heads</option>
                 <option value="4">Cute cats</option>
+                <option value="5">I Don't like robots?</option>
             </select>
             <button className="btn" onClick={onClickHandle}>Revelio</button>
             </div>
             
-            <img src={url + search + "?set=" + setItem} alt={search} />
+            <img src={url + search + "?set=" + setItem + "&bgset=" + randombgs()} alt={search} />
         </div>
     )
 }
