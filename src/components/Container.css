@@ -52,6 +52,7 @@ option{
 }
 
 .btn{
+    width: 20vw;
     margin: 1rem;
     padding: 10px;
     background-color: black;
@@ -63,4 +64,27 @@ option{
 
 img{
     margin-top: 1rem;
+}
+
+@media (max-width:600px) {
+    .heading{
+        font-size: 10vw;
+    }
+
+    .search-box{
+        position: relative;
+        left: 15%;
+        width: 50vw;
+    }
+
+    .drop-down{
+        margin-left: 5rem;
+        width: 30vw;
+        margin-left: 3rem;
+    }
+
+    .btn{
+        width: 30vw;
+        margin-left:2rem;
+    }
 }
