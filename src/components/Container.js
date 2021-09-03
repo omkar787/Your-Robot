@@ -10,7 +10,6 @@ export default function Container() {
 
     function onClickHandle(e){
         const temp = searchBox.current.value
-        console.log(temp);
         if(temp === ""){
             setsearch("Harry")
         }else{
@@ -22,9 +21,7 @@ export default function Container() {
     }
 
     function onChangeHandle(e){
-        console.log(e.target.value);
         setsetItem(returnSet(e.target.value))
-        console.log(setItem);
     }
     function returnSet(v){
         switch(v){
@@ -46,11 +43,17 @@ export default function Container() {
 
     }
 
+    function onKeyPressHandle(e){
+        if(e.key === "Enter"){
+            onClickHandle()
+        }
+    }
+
     return (
         <div className="container">
             <h1 className="heading">Is this you?</h1>
             <div>
-            <input className="search-box" ref={searchBox} type="text" placeholder={search}/>
+            <input onKeyPress={onKeyPressHandle} className="search-box" ref={searchBox} type="text" placeholder={search}/>
             <select className="drop-down" onChange={onChangeHandle}>
                 <option value="1">Robots</option>
                 <option value="2">Monsters</option>
