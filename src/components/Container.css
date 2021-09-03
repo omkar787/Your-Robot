@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading{
+    font-size: 3vw;
+    font-family: 'Azeret Mono', monospace;
+    letter-spacing: 2px;
+}
