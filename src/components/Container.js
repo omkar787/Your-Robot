@@ -71,7 +71,7 @@ export default function Container() {
                 <option value="2">Monsters</option>
                 <option value="3">Only heads</option>
                 <option value="4">Cute cats</option>
-                <option value="5">I Don't like robots?</option>
+                <option value="5">I Don't like robots!</option>
             </select>
             <button className="btn" onClick={onClickHandle}>Revelio</button>
             </div>
